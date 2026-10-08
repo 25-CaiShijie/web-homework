@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔡世杰的个人主页 - 随堂作业</title>
+    <style>
+        /* 基础重置与全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* 主容器：毛玻璃卡片效果 */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 900px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* 顶部个人简介区 */
+        .profile-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .profile-header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .profile-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* 内容区 */
+        .content {
+            padding: 40px;
+        }
+
+        /* 卡片网格布局 */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: #f8faff;
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid #eef2f7;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #d0e1ff;
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2f7;
+            display: flex;
+            align-items: center;
+        }
+
+        .card h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 18px;
+            background: #4facfe;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        /* 技能条 */
+        .skill-item {
+            margin-bottom: 18px;
+        }
+
+        .skill-item span {
+            display: block;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            transition: width 1s ease-in-out;
+        }
+
+        /* 作品列表 */
+        .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            border-left: 4px solid #4facfe;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-item h3 {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .project-item p {
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f5f9;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-header h1 {
+                font-size: 1.6rem;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 个人简介头部 -->
+        <div class="profile-header">
+            <div class="avatar">蔡</div>
+            <h1>蔡世杰</h1>
+            <p>学号：202511160230</p>
+            <div class="badge">Web 前端初学者 · 随堂作业</div>
+        </div>
+
+        <!-- 内容主体 -->
+        <div class="content">
+            <div class="grid">
+                <!-- 技能列表 -->
+                <div class="card">
+                    <h2>我的技能</h2>
+                    
+                    <div class="skill-item">
+                        <span>HTML 结构搭建</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span>CSS 样式与布局</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span>JavaScript 交互</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 60%;"></div></div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span>Git / GitHub 版本控制</span>
+                        <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- 作品展示 -->
+                <div class="card">
+                    <h2>我的作品</h2>
+                    
+                    <div class="project-item">
+                        <h3>作品一：个人主页</h3>
+                        <p>使用 HTML 和 CSS 搭建的响应式个人展示页面，目前正在 GitHub Pages 上托管。</p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3>作品二：校园风景展示</h3>
+                        <p>利用 Flexbox 与 Grid 布局实现的多图排列展示页，适配手机端浏览。</p>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3>作品三：简易计算器</h3>
+                        <p>结合 JavaScript 实现基础数学运算与按键交互。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <p>© 2026 蔡世杰 的个人主页 | 随堂作业</p>
+        </div>
+    </div>
+
+</body>
+</html>
