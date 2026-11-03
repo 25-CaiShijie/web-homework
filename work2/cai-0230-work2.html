@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>琴语钢琴社｜以琴会友</title>
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0;color:#27313a;font-family:"Microsoft YaHei",sans-serif;background:#f7f5f1;line-height:1.8}
+        header{background:#18242a;color:white;padding:18px max(5vw,24px);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:3}
+        a{color:inherit}
+        .brand{font-size:22px;font-weight:bold}
+        nav{display:flex;gap:22px;flex-wrap:wrap}
+        nav a{text-decoration:none}
+        .music{background:#bd8c54;border:0;color:white;padding:9px 15px;border-radius:20px;cursor:pointer}
+        .hero{padding:100px 9%;background:linear-gradient(110deg,#16232bdc,#16232b45),url('');background-color:#34464c;color:white;min-height:430px}
+        .hero h1{font-size:48px;margin:10px 0}
+        .hero p{max-width:580px}
+        .wrap{max-width:1000px;margin:auto;padding:45px 24px}
+        section{scroll-margin-top:85px;margin-bottom:55px;background:white;padding:32px;border-radius:14px;box-shadow:0 8px 28px #2632380b}
+        h2{color:#926b43}
+        .back{display:inline-block;margin-top:15px;color:#926b43}
+        .gallery{display:grid;grid-template-columns:1fr;gap:14px}
+        .gallery img{width:100%;height:100%;object-fit:cover;border-radius:14px;box-shadow:0 10px 24px #17252b20}
+        .gallery img:first-child{grid-row:auto}
+        .gallery img:not(:first-child){height:100%}
+        .story{min-height:360px}
+        .intro{min-height:280px}
+        table{width:100%;border-collapse:collapse;text-align:center}
+        td,th{border:1px solid #d8d5cf;padding:12px}
+        th{background:#eee7dc}
+        form table{text-align:left}
+        input,select,textarea{padding:8px;border:1px solid #bbb;border-radius:5px}
+        footer{text-align:center;padding:30px;background:#18242a;color:white} 
+        @media(max-width:650px){
+            nav{gap:9px;font-size:13px}
+            .hero h1{font-size:34px}
+            .gallery{grid-template-columns:1fr;grid-template-rows:280px}
+            .gallery img:first-child{grid-row:auto}
+        }
+    </style>
+</head>
+<body id="top">
+    <header>
+        <div class="brand">♬ 琴语钢琴社</div>
+        <nav>
+            <a href="#about">社团简介</a>
+            <a href="#events">活动安排</a>
+            <a href="#gallery">风采展示</a>
+            <a href="#stories">社员故事</a>
+            <a href="#join">在线报名</a>
+        </nav>
+        <button class="music" onclick="document.getElementById('bgm').play()">♫ 播放社团音乐</button>
+        <audio id="bgm" src="music.mp3" loop></audio>
+    </header>
+
+    <div class="hero">
+        <p>PIANO CLUB · CAMPUS MUSIC COMMUNITY</p>
+        <h1>让每一次相遇<br>都有琴声作伴</h1>
+        <p>在琴键之间遇见同好，在旋律之中找到自己的节奏。零基础也欢迎加入。</p>
+        <a href="#join">加入我们 →</a>
+    </div>
+
+    <main class="wrap">
+        <section id="about" class="intro">
+            <h2>社团简介</h2>
+            <p>琴语钢琴社是一个面向全校同学开放的音乐交流社团。我们相信，钢琴不只是舞台上的独奏，也可以是朋友之间分享心情的语言。无论你已经学习多年，还是刚刚对琴键产生好奇，都能在这里找到适合自己的位置。</p>
+            <p>社团日常包括基础练习、曲目交流、合奏排练、音乐欣赏和校园演出。指导成员会带领大家熟悉乐谱、节奏与基本指法；有经验的社员也会分享练习方法和舞台经验。我们尊重每个人不同的起点，鼓励循序渐进，让练习成为有陪伴、有反馈的快乐过程。</p>
+            <p>加入琴语，你可以认识热爱音乐的伙伴，参与主题沙龙与小型音乐会，也可以尝试为诗歌、影像和校园活动创作配乐。这里没有必须达到的门槛，只有愿意倾听、练习和分享的心。期待与你在琴声里相遇。</p>
+            <a class="back" href="#top">↑ 返回顶部</a>
+        </section>
+
+        <section id="events">
+            <h2>本学期主要活动安排</h2>
+            <table>
+                <tr><th colspan="4">琴语钢琴社 2026 年春季学期活动安排表</th></tr>
+                <tr><td>日期</td><td>活动名称</td><td>地点</td><td>内容</td></tr>
+                <tr><td>3月10日</td><td>新成员见面会</td><td rowspan="2">艺术楼 201</td><td>认识伙伴、社团介绍</td></tr>
+                <tr><td>3月17日</td><td>钢琴基础教学公开课</td><td>认识键盘与节奏</td></tr>
+                <tr><td>4月12日</td><td>四手联弹工作坊</td><td>音乐教室 3</td><td>合作排练</td></tr>
+                <tr><td>5月20日</td><td>春日琴声分享会</td><td>大学生活动中心</td><td>社员演出交流</td></tr>
+            </table>
+            <a class="back" href="#top">↑ 返回顶部</a>
+        </section>
+
+        <!-- 风采展示部分 -->
+        <section id="gallery">
+            <h2>风采展示</h2>
+            <p>排练、演出与每一段认真练习的时光，都是琴语的日常。</p>
+            <div class="gallery">
+                <img src="photo.jpg" alt="琴语钢琴社原创主题视觉">
+            </div>
+            <a href="club_intro.html"><img src="photo.jpg" alt="点击查看钢琴社活动介绍" style="width:100%;max-height:180px;object-fit:cover;margin-top:15px;border-radius:10px"></a>
+            <a class="back" href="#top">↑ 返回顶部</a>
+        </section>
+
+        <!-- 影像记录部分 -->
+        <section>
+            <h2>影像记录</h2>
+            <!-- 视频源已修改为 piano.mp4 -->
+            <video controls width="100%" poster="poster.jpg" style="border-radius:14px;background:#18242a">
+                <source src="piano.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </section>
+
+        <section id="stories" class="story">
+            <h2>社员故事（节选）</h2>
+            <p>加入钢琴社之前，我总觉得钢琴属于那些从小就开始学习的人。第一次走进活动室时，我甚至不敢坐到琴凳上。学姐没有催我弹完整曲子，只是带我认识中央C，教我用最放松的手指按下第一个音。那个声音并不完美，却让我第一次觉得，音乐离我并不遥远。</p>
+            <p>后来每周的练习成了我期待的时刻。我们会把困难的小节拆开慢慢练，也会在休息时交换最近喜欢的旋律。有人弹古典，有人喜欢电影配乐，还有人尝试把流行歌曲改编成钢琴独奏。每个人的进度不同，但大家都会认真听彼此演奏，给出具体又温柔的建议。</p>
+            <p>第一次参加社团分享会，我负责弹一首简单的曲子。上台前手心都是汗，看到台下熟悉的伙伴朝我点头，我终于稳住了呼吸。最后一个音落下时，掌声让我明白，舞台不是评判谁更厉害的地方，而是把练习和心意分享出来的地方。现在我也会陪新成员从最基础的节奏开始，告诉他们：不必着急，愿意开始就已经很好。</p>
+            <p>钢琴社带给我的不仅是弹奏技巧，还有一群愿意一起进步的朋友。忙碌的时候，琴声让人安静下来；遇到瓶颈时，伙伴的鼓励让我重新坐回琴前。我希望更多同学加入我们，不论你想认真学琴、拓展兴趣，还是只是想找一个能听音乐、聊音乐的空间，这里都会为你留一个位置。</p>
+            <a class="back" href="#top">↑ 返回顶部</a>
+        </section>
+
+        <section id="join">
+            <h2>琴语钢琴社在线报名</h2>
+            <form>
+                <table>
+                    <tr><td>姓名</td><td><input type="text" name="name"></td></tr>
+                    <tr><td>性别</td><td><label><input type="radio" name="gender">男</label> <label><input type="radio" name="gender">女</label></td></tr>
+                    <tr><td>出生日期</td><td><input type="text" placeholder="年">年 <input type="text" placeholder="月">月 <input type="text" placeholder="日">日</td></tr>
+                    <tr><td>手机</td><td><input type="text" name="phone"></td></tr>
+                    <tr><td>邮箱</td><td><input type="text" name="email"></td></tr>
+                    <tr><td>是否有钢琴基础</td><td><label><input type="radio" name="base">有</label> <label><input type="radio" name="base">没有</label></td></tr>
+                    <tr><td>兴趣方向</td><td><label><input type="checkbox">古典</label> <label><input type="checkbox">流行</label> <label><input type="checkbox">合奏</label> <label><input type="checkbox">创作</label></td></tr>
+                    <tr><td>年级</td><td><select><option>请选择</option><option>大一</option><option>大二</option><option>大三</option><option>大四</option><option>研究生</option></select></td></tr>
+                    <tr><td>自我介绍</td><td><textarea rows="4" cols="40" placeholder="请简单介绍自己、以及加入钢琴社的理由……"></textarea></td></tr>
+                    <tr><td>是否服从活动安排</td><td><label><input type="radio" name="agree">是</label> <label><input type="radio" name="agree">否</label></td></tr>
+                    <tr><td colspan="2" style="text-align:center"><input type="submit" value="提交报名"> <input type="reset" value="重置"></td></tr>
+                </table>
+            </form>
+            <a class="back" href="#top">↑ 返回顶部</a>
+        </section>
+    </main>
+
+    <footer>琴语钢琴社 · 以琴会友，以乐相逢</footer>
+</body>
+</html>
